@@ -22,6 +22,7 @@ import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.ui.overlay.OverlayManager;
 import net.runelite.client.util.ImageUtil;
 
+import com.google.gson.Gson;
 import javax.inject.Inject;
 import java.awt.image.BufferedImage;
 import java.util.*;
@@ -55,6 +56,9 @@ public class AHKusationsPlugin extends Plugin
 
 	@Inject
 	private EventBus eventBus;
+
+	@Inject
+	private Gson gson;
 
 	@Inject
 	private OverlayManager overlayManager;
@@ -123,7 +127,7 @@ public class AHKusationsPlugin extends Plugin
 	@Override
 	protected void startUp() throws Exception
 	{
-		dataStore = new FightDataStore();
+		dataStore = new FightDataStore(gson);
 
 		// Load raw fight data and re-analyze with current algorithm
 		try

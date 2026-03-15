@@ -1,14 +1,11 @@
 package com.ahkusations;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
-import java.lang.reflect.Type;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,10 +20,11 @@ public class FightDataStore
 	private static final Path DATA_DIR = Paths.get(System.getProperty("user.home"), ".runelite", "ahkusations");
 	private static final Path RAW_DATA_DIR = DATA_DIR.resolve("raw");
 
-	private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
+	private final Gson gson;
 
-	public FightDataStore()
+	public FightDataStore(Gson gson)
 	{
+		this.gson = gson.newBuilder().setPrettyPrinting().create();
 		try
 		{
 			Files.createDirectories(DATA_DIR);
