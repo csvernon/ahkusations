@@ -72,7 +72,7 @@ public class AHKusationsOverlay extends OverlayPanel
 		try
 		{
 			liveOpponentAnalysis = CheatDetector.analyzeOpponent(session);
-			if (config.analyzeSelf())
+			if (true)
 			{
 				liveSelfAnalysis = CheatDetector.analyzeLocal(session);
 			}

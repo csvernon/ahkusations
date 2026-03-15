@@ -128,7 +128,7 @@ public class AHKusationsPlugin extends Plugin
 		// Load raw fight data and re-analyze with current algorithm
 		try
 		{
-			List<FightHistoryEntry> saved = dataStore.loadAndReanalyze(config.analyzeSelf(), config.maxFightHistory());
+			List<FightHistoryEntry> saved = dataStore.loadAndReanalyze(true, config.maxFightHistory());
 			fightHistory.clear();
 			fightHistory.addAll(saved);
 		}
@@ -583,7 +583,7 @@ public class AHKusationsPlugin extends Plugin
 				CheatAnalysis opponentAnalysis = CheatDetector.analyzeOpponent(currentFight);
 
 				CheatAnalysis selfAnalysis = null;
-				if (config.analyzeSelf())
+				if (true)
 				{
 					selfAnalysis = CheatDetector.analyzeLocal(currentFight);
 				}

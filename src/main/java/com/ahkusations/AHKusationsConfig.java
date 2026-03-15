@@ -16,18 +16,6 @@ public interface AHKusationsConfig extends Config
 	String thresholdsSection = "thresholds";
 
 	@ConfigItem(
-		keyName = "suspiciousGearSwitches",
-		name = "Suspicious gear switches",
-		description = "Number of gear switches in one tick considered suspicious",
-		section = thresholdsSection,
-		position = 0
-	)
-	default int suspiciousGearSwitches()
-	{
-		return 6;
-	}
-
-	@ConfigItem(
 		keyName = "minFightTicks",
 		name = "Min fight duration (ticks)",
 		description = "Minimum fight length in ticks before analysis runs",
@@ -59,17 +47,6 @@ public interface AHKusationsConfig extends Config
 	default int fightEndTimeout()
 	{
 		return 16;
-	}
-
-	@ConfigItem(
-		keyName = "analyzeSelf",
-		name = "Analyze self",
-		description = "Also analyze your own actions for suspicion scoring",
-		position = 4
-	)
-	default boolean analyzeSelf()
-	{
-		return true;
 	}
 
 	@ConfigItem(
