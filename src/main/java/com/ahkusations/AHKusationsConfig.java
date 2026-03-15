@@ -58,7 +58,7 @@ public interface AHKusationsConfig extends Config
 	)
 	default int fightEndTimeout()
 	{
-		return 8;
+		return 16;
 	}
 
 	@ConfigItem(
