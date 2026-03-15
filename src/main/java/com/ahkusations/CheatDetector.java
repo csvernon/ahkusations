@@ -262,19 +262,19 @@ public class CheatDetector
 		double attackTimingScore = 0;
 		if (attackIntervalVariance >= 0 && attackIntervals.size() >= 5)
 		{
-			if (attackIntervalVariance < 1.0)
+			if (attackIntervalVariance < 0.7)
 			{
 				attackTimingScore = 80;
 				flags.add("Robotic attack timing: var=" + String.format("%.2f", attackIntervalVariance));
 			}
-			else if (attackIntervalVariance < 3.0)
+			else if (attackIntervalVariance < 1.5)
 			{
-				attackTimingScore = 50;
+				attackTimingScore = 45;
 				flags.add("Tight attack timing: var=" + String.format("%.2f", attackIntervalVariance));
 			}
-			else if (attackIntervalVariance < 6.0)
+			else if (attackIntervalVariance < 3.0)
 			{
-				attackTimingScore = 25;
+				attackTimingScore = 20;
 			}
 		}
 
